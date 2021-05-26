@@ -1,0 +1,12 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  cursor: none;
+}
+
+body
+{
+  overflow: hidden;
+  position: fixed;
+}
