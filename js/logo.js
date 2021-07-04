@@ -3,17 +3,14 @@ class Logo {
     this.size = size;
     this.xpos = xpos;
     this.ypos = ypos;
-    this.offset;
-    this.regularFont = loadFont('./fonts/Muli/static/Muli-Regular.ttf');
-    this.boldFont = loadFont('./fonts/Muli/static/Muli-ExtraBold.ttf');
+    this.font = loadFont('./fonts/Anton-Regular.ttf');
   }
 
   spinner (offset) {
-    this.offset = offset;
     const bars = 24;
     strokeWeight(10);
-    stroke(color(206, 17, 38));
-    fill(color(206, 17, 38));
+    stroke(0);
+    fill(0);
 
     let x = this.xpos - this.size;
     let y = this.ypos - this.size / 2.5;
@@ -30,23 +27,13 @@ class Logo {
     }
   }
 
-  getSpinnerCenter () {
-    let pos = {
-      x: this.xpos - this.size,
-      y: this.ypos - this.size / 2.5
-    }
-
-    return pos;
-  }
-
   display (offset) {
-    fill(color(206, 17, 38));
+    fill(0);
     strokeWeight(0);
     textSize(this.size);
-    textFont(this.boldFont);
-    text('Raytheon', this.xpos, this.ypos - this.size / 2);
-    textFont(this.regularFont);
-    text('Technologies', this.xpos, this.ypos + this.size / 2);
+    textFont(this.font);
+    text('Collins', this.xpos, this.ypos - this.size / 2);
+    text('Aerospace', this.xpos, this.ypos + this.size / 2);
     this.spinner(offset);
   }
 }
